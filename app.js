@@ -10,8 +10,6 @@ console.log(hora)
 
 
 document.getElementById("date").setAttribute('min', fecha);
-document.getElementById("time").setAttribute('min', hora);
-
 
 checkbox1.addEventListener("change", validaCheckbox, false);
 function validaCheckbox() {
@@ -32,6 +30,8 @@ button1.addEventListener("click", siguiente1)
 function siguiente1() {
 
     console.log("hola")
+    horaActual()
+
 
 }
 
@@ -40,4 +40,12 @@ function ocultarFechaHora() {
 }
 function mostrarFechaHora() {
     fechaHora.style.display = "block"
+}
+
+function horaActual() {
+    if (document.getElementById("time").value <= hora) {
+        document.getElementById("time").value = NaN;
+    }
+
+
 }
