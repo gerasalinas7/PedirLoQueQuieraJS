@@ -10,7 +10,7 @@ console.log(hora)
 
 
 document.getElementById("date").setAttribute('min', fecha);
-document.getElementById("date").setAttribute('min', hora);
+document.getElementById("time").setAttribute('min', hora);
 
 
 checkbox1.addEventListener("change", validaCheckbox, false);
@@ -18,6 +18,9 @@ function validaCheckbox() {
     var checked = checkbox1.checked;
     if (checked) {
         ocultarFechaHora();
+        document.getElementById("date").required = false;
+        document.getElementById("time").required = false;
+
     }
     else {
         mostrarFechaHora();
