@@ -37,10 +37,66 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container-fluid">
         <div>
             <h1>UBICACION</h1>
         </div>
+        <div class="row">
+            <div class="col-sm-12">
+              <h2> Direccion de Comercio: </h2>
+            </div>
+            S
+                <div class="form-group col-sm-12">
+                  <label>Ciudad:*</label>
+                  <input type="text" name="inputciudad" class="form-control" maxlength="30" placeholder="Ciudad">
+                </div>
+                
+                <div class="form-group col-sm-12">
+                  <label>Calle:*</label>
+                  <input type="text" name="inputcalle" class="form-control" maxlength="30" placeholder="Calle">
+                </div>
+            
+                <div class="form-group col-sm-12">
+                  <label>Numero:*</label>
+                  <input type="number" name="inputnumero" class="form-control" placeholder="Numero" maxlength="4" min="1">       
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <label>Descripcion(Opcional):</label>
+                  <input type="text" class="form-control" maxlength="200" placeholder="Descripcion">
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <h2> Direccion de Destino: </h2>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-sm-12">
+                  <label>Ciudad:*</label>
+                  <select name="inputciudadenvio"class="form-control">
+                    <option selected>Agregar Ciudades</option>
+                    <option>Agregar ciudades</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <label>Calle:*</label>
+                  <input type="text" class="form-control" name="inputcalleenvio"  placeholder="Calle" maxlength="30">
+                </div>
+        
+                <div class="form-group col-sm-3">
+                  <label>Numero:*</label>
+                  <input type="number" class="form-control" name="inputnumeroenvio" placeholder="Numero" maxlength="4" min="1">               
+                </div>
+                <div class="form-group col-sm-12">
+                    <label>Descripcion(Opcional):</label>
+                    <input type="text" class="form-control" maxlength="200" placeholder="Descripcion">
+                </div>
+            </div>
+
+        </div>
+        
     </div>
 
 
