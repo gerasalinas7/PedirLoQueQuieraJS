@@ -45,113 +45,122 @@
             <button class="btn btn-info" id="btnManual">Direccion Manual</button>
 
         </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <h2> Direccion de Comercio: </h2>
-                <div class="form-row" id="showManual" style="display: block;">
+        <form>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2> Direccion de Comercio: </h2>
+                    <div class="form-row" id="showManual" style="display: block;">
+                        <div class="form-group col-sm-12">
+                            <label>Ciudad:*</label>
+                            <input type="text" id="inputciudad" class="form-control" maxlength="30" placeholder="Ciudad"
+                                required>
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                            <label>Calle:*</label>
+                            <input type="text" id="inputcalle" class="form-control" maxlength="30" placeholder="Calle"
+                                required>
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                            <label>Numero:*</label>
+                            <input type="number" id="inputnumero" class="form-control" placeholder="Numero"
+                                maxlength="4" min="1" required>
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                            <label>Descripcion(Opcional):</label>
+                            <input type="text" class="form-control" maxlength="200" placeholder="Descripcion">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row" id="showMapa" style="display: none;">
+                <div class="col-sm-8">
+                    <h5>Seleccione direccion en el mapa:</h5>
+                    <style>
+                        /* Set the size of the div element that contains the map */
+                        #map {
+                            height: 400px;
+                            /* The height is 400 pixels */
+                            width: 100%;
+                            /* The width is the width of the web page */
+                        }
+                    </style>
+                    <!--The div element for the map -->
+                    <div id="map"></div>
+                    <script>
+                        // Initialize and add the map
+                        function initMap() {
+                            var miMarcador = new google.maps.LatLng(-31.4286287, -64.1848189);
+                            var mapOptions = {
+                                zoom: 12,
+                                center: miMarcador
+                            }
+                            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+                            // Place a draggable marker on the map
+                            var marker = new google.maps.Marker({
+                                position: miMarcador,
+                                map: map,
+                                draggable: true,
+                                title: "Arrastrame!"
+                            });
+                        }
+
+                    </script>
+                    <!--Load the API from the specified URL
+      * The async attribute allows the browser to render the page while the API loads
+      * The key parameter will contain your own API key (which is not needed for this tutorial)
+      * The callback parameter executes the initMap() function
+      -->
+                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBN3hl8CILMQex6Sv2xo0rxrhetOd1Zcs8
+    &callback=initMap">
+    </script>
+                </div>
+            </div>
+
+
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2> Direccion de Entrega: </h2>
+                </div>
+
+                <div class="form-row">
                     <div class="form-group col-sm-12">
                         <label>Ciudad:*</label>
-                        <input type="text" name="inputciudad" class="form-control" maxlength="30" placeholder="Ciudad">
+                        <select name="inputciudadenvio" class="form-control" required>
+                            <option selected>Agregar Ciudades</option>
+                            <option>Agregar ciudades</option>
+                        </select>
                     </div>
 
                     <div class="form-group col-sm-12">
                         <label>Calle:*</label>
-                        <input type="text" name="inputcalle" class="form-control" maxlength="30" placeholder="Calle">
+                        <input type="text" class="form-control" id="inputcalleenvio" placeholder="Calle" maxlength="30"
+                            required>
                     </div>
 
-                    <div class="form-group col-sm-12">
+                    <div class="form-group col-sm-3">
                         <label>Numero:*</label>
-                        <input type="number" name="inputnumero" class="form-control" placeholder="Numero" maxlength="4"
-                            min="1">
+                        <input type="number" class="form-control" id="inputnumeroenvio" placeholder="Numero"
+                            maxlength="4" min="1" required>
                     </div>
-
                     <div class="form-group col-sm-12">
                         <label>Descripcion(Opcional):</label>
                         <input type="text" class="form-control" maxlength="200" placeholder="Descripcion">
                     </div>
                 </div>
             </div>
-        </div>
 
+            <a class="btn btn-primary" id="btnAtras">Atras</a>
+            <button class="btn btn-primary" id="btnSiguiente">Siguiente</button>
+        </form>
 
-        <div class="row" id="showMapa" style="display: none;">
-            <div class="col-sm-8">
-                <h5>Seleccione direccion en el mapa:</h5>
-                <style>
-                    /* Set the size of the div element that contains the map */
-                    #map {
-                        height: 400px;
-                        /* The height is 400 pixels */
-                        width: 100%;
-                        /* The width is the width of the web page */
-                    }
-                </style>
-                <!--The div element for the map -->
-                <div id="map"></div>
-                <script>
-                    // Initialize and add the map
-                    function initMap() {
-                        var miMarcador = new google.maps.LatLng(-31.4286287, -64.1848189);
-                        var mapOptions = {
-                            zoom: 12,
-                            center: miMarcador
-                        }
-                        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-                        // Place a draggable marker on the map
-                        var marker = new google.maps.Marker({
-                            position: miMarcador,
-                            map: map,
-                            draggable: true,
-                            title: "Arrastrame!"
-                        });
-                    }
-
-                </script>
-                <!--Load the API from the specified URL
-      * The async attribute allows the browser to render the page while the API loads
-      * The key parameter will contain your own API key (which is not needed for this tutorial)
-      * The callback parameter executes the initMap() function
-      -->
-                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBN3hl8CILMQex6Sv2xo0rxrhetOd1Zcs8
-    &callback=initMap">
-    </script>
-            </div>
-        </div>
-
-
-
-
-        <div class="row">
-            <div class="col-sm-12">
-                <h2> Direccion de Entrega: </h2>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-sm-12">
-                    <label>Ciudad:*</label>
-                    <select name="inputciudadenvio" class="form-control">
-                        <option selected>Agregar Ciudades</option>
-                        <option>Agregar ciudades</option>
-                    </select>
-                </div>
-
-                <div class="form-group col-sm-12">
-                    <label>Calle:*</label>
-                    <input type="text" class="form-control" name="inputcalleenvio" placeholder="Calle" maxlength="30">
-                </div>
-
-                <div class="form-group col-sm-3">
-                    <label>Numero:*</label>
-                    <input type="number" class="form-control" name="inputnumeroenvio" placeholder="Numero" maxlength="4"
-                        min="1">
-                </div>
-                <div class="form-group col-sm-12">
-                    <label>Descripcion(Opcional):</label>
-                    <input type="text" class="form-control" maxlength="200" placeholder="Descripcion">
-                </div>
-            </div>
-        </div>
     </div>
 
 
