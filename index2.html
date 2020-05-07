@@ -55,68 +55,54 @@
 
                 <div class="row" id="pagoTarjeta" style="display: block;">
 
-
-                    <div class="creditCardForm col-sm-4">
-                        <div class="payment">
-                            <div class="heading">
-                                <h4>Pago con Tarjeta:</h4>
-                            </div>
-                            <!--FALTA TARJETA DE CREDITO!!! -->
-
-                            <form method="post" id="paymentForm">
-                                <p>
-                                    <label>Card number</label>
-                                    <input type="text" placeholder="1234 5678 9012 3456" id="card_number">
-                                </p>
-                                <p>
-                                    <label>Expiry month</label>
-                                    <input type="text" placeholder="MM" maxlength="5" id="expiry_month">
-                                </p>
-                                <p>
-                                    <label>Expiry year</label>
-                                    <input type="text" placeholder="YYYY" maxlength="5" id="expiry_year">
-                                </p>
-                                <p>
-                                    <label>CVV</label>
-                                    <input type="text" placeholder="123" maxlength="3" id="cvv">
-                                </p>
-                                <p>
-                                    <label>Name on card</label>
-                                    <input type="text" placeholder="Codex World" id="name_on_card">
-                                </p>
-
-
-
-                                <div class="form-group" id="credit_cards">
-                                    <img src="/images/visa.jpg" id="visa">
-                                </div>
-
-                            </form>
-                        </div>
+                    <div>
+                        <h4>Pago con Tarjeta:</h4>
                     </div>
+                    <p>
+                        <label>Card number</label>
+                        <input type="text" placeholder="1234 5678 9012 3456" id="card_number">
+                    </p>
+                    <p>
+                        <label>Expiry month</label>
+                        <input type="text" placeholder="MM" maxlength="5" id="expiry_month">
+                    </p>
+                    <p>
+                        <label>Expiry year</label>
+                        <input type="text" placeholder="YYYY" maxlength="5" id="expiry_year">
+                    </p>
+                    <p>
+                        <label>CVV</label>
+                        <input type="text" placeholder="123" maxlength="3" id="cvv">
+                    </p>
+                    <p>
+                        <label>Name on card</label>
+                        <input type="text" placeholder="Codex World" id="name_on_card">
+                    </p>
+
+
+
+                    <div class="form-group" id="credit_cards">
+                        <img src="/images/visa.jpg" id="visa">
+                    </div>
+
                 </div>
 
                 <div class="row" id="pagoEfectivo" style="display: none;">
                     <div class="col-sm-4">
                         <h4>Pago con Efectivo:</h4>
-                        <form name="formefectivo">
-                            <label>Monto a Pagar:*</label>
-                            <input type="number" class="form-control" ng-model="inputmonto"
-                                ng-required="efectivorequerido" placeholder="Monto" maxlength="6" min="0">
-                        </form>
+                        <label>Monto a Pagar:*</label>
+                        <input type="number" class="form-control" ng-model="inputmonto" ng-required="efectivorequerido"
+                            placeholder="Monto" maxlength="6" min="0">
                     </div>
                 </div><br>
 
-                <div class="form-group" id="pay-now">
+
+                <a class="btn btn-primary" href="/index1.html">Atras</a>
+
+                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal"
+                    id="confirm">Confirmar</button>
 
 
-                    <a class="btn btn-primary" href="/index1.html">Atras</a>
-
-                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal"
-                        id="confirm">Confirmar</button>
-
-
-                </div>
             </form>
         </div>
         <!-- Modal Pedido Confirmado -->
