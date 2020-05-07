@@ -29,30 +29,30 @@ var regexNum = /^[0-9]{15,16}|(([0-9]{4}\s){3}[0-9]{3,4})$/; // 16 digitos o de 
 function validacion() {
     if (!regexNum.test(document.getElementById("card_number").value)) {
         // Si no se cumple la condicion...
-        alert('[ERROR ] El campo debe numero de tarjeta es invalido');
+        alert('[ERROR NUMERO TARJETA] El campo numero de tarjeta es invalido');
         document.getElementById("card_number").value = ""
     }
     else if (!regMonth.test(document.getElementById("expiry_month").value)) {
         // Si no se cumple la condicion...
-        alert('[ERROR MES VENCIMIENTO] El campo debe tener un valor entre 01 y 12');
+        alert('[ERROR MES VENCIMIENTO] El campo mes debe tener un valor entre 01 y 12');
         document.getElementById("expiry_month").required = true;
         document.getElementById("expiry_month").value = ""
     }
     else if (!regYear.test(document.getElementById("expiry_year").value)) {
         // Si no se cumple la condicion...
-        alert('[ERROR AÑO VENCIMIENTO]  El campo debe tener un valor mayor a 2019');
+        alert('[ERROR AÑO VENCIMIENTO]  El campo año debe tener un valor mayor a 2019');
         document.getElementById("expiry_year").required = true;
         document.getElementById("expiry_year").value = ""
     }
     else if (!regCVV.test(document.getElementById("cvv").value)) {
         // Si no se cumple la condicion...
-        alert('[ERROR CVV] El campo debe tener un valor numerico de 3 cifras');
+        alert('[ERROR CVV] El campo CVV debe tener un valor numerico de 3 cifras');
         document.getElementById("cvv").required = true;
         document.getElementById("cvv").value = ""
     }
     else if (!regName.test(document.getElementById("name_on_card").value)) {
         // Si no se cumple la condicion...
-        alert('[ERROR] El campo debe tener solo letras');
+        alert('[ERROR TITULAR] El campo titular debe tener solo letras');
         document.getElementById("name_on_card").required = true;
         document.getElementById("name_on_card").value = ""
     }
