@@ -41,14 +41,14 @@
         <div>
             <h1>UBICACION</h1>
 
-            <a class="btn btn-primary" href="#">Google Maps</a>
-            <a class="btn btn-info" href="#">Direccion Manual</a>
+            <button class="btn btn-primary" id="btnMapa">Google Maps</button>
+            <button class="btn btn-info" id="btnManual">Direccion Manual</button>
 
         </div>
         <div class="row">
             <div class="col-sm-12">
                 <h2> Direccion de Comercio: </h2>
-                <div class="form-row">
+                <div class="form-row" id="showManual" style="display: block;">
                     <div class="form-group col-sm-12">
                         <label>Ciudad:*</label>
                         <input type="text" name="inputciudad" class="form-control" maxlength="30" placeholder="Ciudad">
@@ -74,7 +74,7 @@
         </div>
 
 
-        <div class="row">
+        <div class="row" id="showMapa" style="display: none;">
             <div class="col-sm-8">
                 <h5>Seleccione direccion en el mapa:</h5>
                 <style>
@@ -124,7 +124,7 @@
 
         <div class="row">
             <div class="col-sm-12">
-                <h2> Direccion de Destino: </h2>
+                <h2> Direccion de Entrega: </h2>
             </div>
 
             <div class="form-row">
@@ -156,7 +156,7 @@
 
 
 
-    <script src="/app.js"></script>
+    <script src="/app1.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>

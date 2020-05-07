@@ -27,6 +27,7 @@ function validaCheckbox() {
 
 button1.addEventListener("click", siguiente1)
 
+
 function siguiente1() {
 
     console.log("hola")
@@ -49,3 +50,5 @@ function horaActual() {
 
 
 }
+
+
