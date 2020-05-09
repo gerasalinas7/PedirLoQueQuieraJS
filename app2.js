@@ -38,7 +38,7 @@ var regMonth = /^01|02|03|04|05|06|07|08|09|10|11|12$/;
 var regYear = /^2020|2021|2022|2023|2024|2025|2026|2027|2028|2029|2030|2031$/;
 var regCVV = /^[0-9]{3,3}$/;
 
-var regexNum = /^[0-9]{15,16}|(([0-9]{4}\s){3}[0-9]{3,4})$/; // 16 digitos o de 4 en 4 separados por espacios.
+var regexNum = /^(?:4\d{3})([-\s]?)\d{4}\1\d{4}\1\d{3,4}$/; // 16 digitos o de 4 en 4 separados por espacios.
 
 function validacion() {
     if (!regexNum.test(document.getElementById("card_number").value) && document.getElementById("card_number").required == true) {
