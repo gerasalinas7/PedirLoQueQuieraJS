@@ -22,6 +22,9 @@ function validaCheckbox() {
     }
     else {
         mostrarFechaHora();
+        document.getElementById("date").required = true;
+        document.getElementById("time").required = true;
+
     }
 }
 
@@ -30,7 +33,6 @@ button1.addEventListener("click", siguiente1)
 
 function siguiente1() {
 
-    console.log("hola")
     horaActual()
 
 
@@ -44,8 +46,9 @@ function mostrarFechaHora() {
 }
 
 function horaActual() {
-    if (document.getElementById("time").value <= hora) {
-        document.getElementById("time").value = NaN;
+    if (document.getElementById("time").value <= hora && document.getElementById("time").value != "") {
+        document.getElementById("time").value = "";
+        alert("Ingrese un horario valido para la entrega")
     }
 
 
