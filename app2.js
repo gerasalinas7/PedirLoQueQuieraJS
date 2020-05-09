@@ -58,6 +58,11 @@ function validacion() {
         document.getElementById("expiry_year").required = true;
         document.getElementById("expiry_year").value = ""
     }
+    else if (document.getElementById("expiry_year").value == "2020" && document.getElementById("expiry_month").value < 6) {
+        alert('[ERROR MES VENCIMIENTO]  El campo año debe tener un valor mayor al mes de mayo');
+        document.getElementById("expiry_month").required = true;
+        document.getElementById("expiry_month").value = ""
+    }
     else if (!regCVV.test(document.getElementById("cvv").value) && document.getElementById("cvv").required == true) {
         // Si no se cumple la condicion...
         alert('[ERROR CVV] El campo CVV debe tener un valor numerico de 3 cifras');
