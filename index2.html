@@ -60,19 +60,19 @@
                     </div>
                     <p>
                         <label>Numero de tarjeta</label>
-                        <input type="text" placeholder="1234 5678 9012 3456" id="card_number" required>
+                        <input type="number" placeholder="1234 5678 9012 3456" id="card_number" required>
                     </p>
                     <p>
                         <label>Mes de expiracion</label>
-                        <input type="text" placeholder="MM" maxlength="5" id="expiry_month" required>
+                        <input type="number" placeholder="MM" maxlength="5" id="expiry_month" required>
                     </p>
                     <p>
                         <label>Año de expiracion</label>
-                        <input type="text" placeholder="YYYY" maxlength="5" id="expiry_year" required>
+                        <input type="number" placeholder="YYYY" maxlength="5" id="expiry_year" required>
                     </p>
                     <p>
                         <label>CVV</label>
-                        <input type="text" placeholder="123" maxlength="3" id="cvv" required>
+                        <input type="number" placeholder="123" maxlength="3" id="cvv" required>
                     </p>
                     <p>
                         <label>Titular</label>
@@ -91,8 +91,8 @@
                     <div class="col-sm-4">
                         <h4>Pago con Efectivo:</h4>
                         <label>Monto a Pagar:*</label>
-                        <input type="number" class="form-control" ng-model="inputmonto" ng-required="efectivorequerido"
-                            placeholder="Monto" maxlength="6" min="0">
+                        <input type="number" id="inputEfectivo" class="form-control" placeholder="Monto" maxlength="6"
+                            min="0">
                     </div>
                 </div><br>
 
